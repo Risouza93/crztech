@@ -10,7 +10,7 @@ const STATS = [
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/richard-de-souza-feitosa/";
 
-const Header = memo(function Header({ onScrollContato }) {
+const Header = memo(function Header({ scrollContato }) {
   const renderedStats = useMemo(
     () => STATS.map((stat) => <span key={stat} className="stat-badge">{stat}</span>),
     []
@@ -76,7 +76,7 @@ const Header = memo(function Header({ onScrollContato }) {
           <button
             type="button"
             className="cta-button"
-            onClick={onScrollContato}
+            onClick={scrollContato}
             aria-label="Ir para seção de contato"
           >
             <span aria-hidden="true">🚀</span>

@@ -20,7 +20,9 @@ function App() {
     document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
   }, []);
 
-  const scrollContato = useCallback(() => scrollTo("#contato"), [scrollTo]);
+  const scrollContato = useCallback(() => {
+    document.querySelector("#contato")?.scrollIntoView({ behavior: "smooth" });
+  }, []);
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
