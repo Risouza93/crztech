@@ -8,7 +8,7 @@ import Sections from "./components/Sections";
 import ScrollToTop from "./components/ScrollToTop";
 import CustomCursor from "./components/CustomCursor";
 import Toast from "./components/Toast";
-import TypebotBubble from "./components/TypebotBubble"; // Ajuste o path
+import TypebotBubble from "./components/TypebotBubble";
 
 function App() {
   const [form, setForm] = useState({ nome: "", email: "", mensagem: "" });
@@ -68,8 +68,6 @@ function App() {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
       />
-          
-       {/* NOVO: chatbot IA */}
       <TypebotBubble />
     </ThemeProvider>
   );

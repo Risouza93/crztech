@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 // src/components/TypebotBubble.js - 0 WARNINGS
+=======
+// src/components/TypebotBubble.js
+>>>>>>> 5f4d81cb7c877378cba90552bf02de680cddcec3
 import { useState } from "react";
 
 const TypebotBubble = () => {
   const [isOpen, setIsOpen] = useState(false);
+<<<<<<< HEAD
   const [isHovered, setIsHovered] = useState(false);
   const typebotUrl = "https://typebot.onboarding-jresh.typebot.io";
 
@@ -36,13 +41,35 @@ const TypebotBubble = () => {
     boxShadow: "0 8px 24px rgba(56,189,248,0.4)",
   };
 
+=======
+  const typebotUrl = "https://typebot.onboarding-jresh.typebot.io";
+
+>>>>>>> 5f4d81cb7c877378cba90552bf02de680cddcec3
   return (
     <>
       <button
         onClick={() => setIsOpen(!isOpen)}
+<<<<<<< HEAD
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         style={isHovered ? hoveredStyle : normalStyle}
+=======
+        style={{
+          position: "fixed",
+          bottom: "90px",
+          right: "32px",
+          width: "64px",
+          height: "64px",
+          borderRadius: "50%",
+          background: "linear-gradient(135deg, #38bdf8, #22c55e)",
+          border: "none",
+          boxShadow: "0 8px 24px rgba(56,189,248,0.4)",
+          fontSize: "24px",
+          color: "white",
+          zIndex: 99999,
+          cursor: "pointer",
+        }}
+>>>>>>> 5f4d81cb7c877378cba90552bf02de680cddcec3
       >
         🤖
       </button>
@@ -69,7 +96,10 @@ const TypebotBubble = () => {
             height="100%"
             frameBorder="0"
             allowFullScreen
+<<<<<<< HEAD
             title="Chat IA CRZTech"  // ✅ A11y corrigido
+=======
+>>>>>>> 5f4d81cb7c877378cba90552bf02de680cddcec3
           />
         </div>
       )}
@@ -77,4 +107,8 @@ const TypebotBubble = () => {
   );
 };
 
+<<<<<<< HEAD
 export default TypebotBubble;
+=======
+export default TypebotBubble;
+>>>>>>> 5f4d81cb7c877378cba90552bf02de680cddcec3
