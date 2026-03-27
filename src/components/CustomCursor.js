@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 
 export default function CustomCursor() {
-  const dot = useRef(null);
   const ring = useRef(null);
 
   useEffect(() => {
@@ -14,16 +13,13 @@ export default function CustomCursor() {
     const onMove = (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
-      if (dot.current) {
-        dot.current.style.transform = `translate(${mouseX - 4}px, ${mouseY - 4}px)`;
-      }
     };
 
     const animate = () => {
-      ringX += (mouseX - ringX) * 0.12;
-      ringY += (mouseY - ringY) * 0.12;
+      ringX += (mouseX - ringX) * 0.1;
+      ringY += (mouseY - ringY) * 0.1;
       if (ring.current) {
-        ring.current.style.transform = `translate(${ringX - 20}px, ${ringY - 20}px)`;
+        ring.current.style.transform = `translate(${ringX - 16}px, ${ringY - 16}px)`;
       }
       rafId = requestAnimationFrame(animate);
     };
@@ -32,7 +28,7 @@ export default function CustomCursor() {
     const onLeave = () => ring.current?.classList.remove("cursor-ring--hover");
 
     document.addEventListener("mousemove", onMove);
-    document.querySelectorAll("a, button, .card").forEach((el) => {
+    document.querySelectorAll("a, button, .card, .stat-badge").forEach((el) => {
       el.addEventListener("mouseenter", onEnter);
       el.addEventListener("mouseleave", onLeave);
     });
@@ -46,10 +42,5 @@ export default function CustomCursor() {
     };
   }, []);
 
-  return (
-    <>
-      <div ref={dot} className="cursor-dot" />
-      <div ref={ring} className="cursor-ring" />
-    </>
-  );
+  return <div ref={ring} className="cursor-ring" />;
 }
