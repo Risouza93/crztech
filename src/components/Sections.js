@@ -3,8 +3,6 @@ import Sobre from "./Sobre";
 import Projetos from "./Projetos";
 import Stack from "./Stack";
 
-const CONTATO_INICIAL = { nome: "", email: "", mensagem: "" };
-
 const Contato = memo(function Contato({ form, status, loading, handleChange, handleSubmit }) {
   return (
     <div className="contact-card">
@@ -28,9 +26,12 @@ const Contato = memo(function Contato({ form, status, loading, handleChange, han
         <button type="submit" className="cta-button" disabled={loading}>
           {loading ? "Enviando…" : "Enviar mensagem"}
         </button>
-        {status && (
-          <p className={`status-msg ${status.includes("sucesso") ? "status-msg--sucesso" : "status-msg--erro"}`}
-            role="alert" aria-live="polite">
+        {status && typeof status === "string" && (
+          <p
+            className={`status-msg ${status.includes("sucesso") ? "status-msg--sucesso" : "status-msg--erro"}`}
+            role="alert"
+            aria-live="polite"
+          >
             {status}
           </p>
         )}
