@@ -1,31 +1,45 @@
-import { memo } from "react";
+import { useState, useEffect } from "react";
+import clsx from "clsx";
+import ThemeToggle from "./ThemeToggle";
 
-const NAV_ITEMS = [
-  { id: "sobre",    label: "Sobre"    },
-  { id: "projetos", label: "Projetos" },
-  { id: "stack",    label: "Stack"    },
-  { id: "contato",  label: "Contato"  },
-];
+export default function Nav({ scrollTo }) {
+  const [active, setActive] = useState("#resultados");
 
-const Nav = memo(function Nav({ scrollTo, activeId }) {
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(`#${entry.target.id}`);
+        });
+      },
+      { threshold: 0.4 }
+    );
+    sections.forEach((sec) => observer.observe(sec));
+    return () => observer.disconnect();
+  }, []);
+
+  const links = [
+    { id: "#resultados", label: "Resultados" },
+    { id: "#sobre", label: "Sobre" },
+    { id: "#experiencia", label: "Experiência" },
+    { id: "#contato", label: "Contato" },
+  ];
+
   return (
-    <nav aria-label="Navegação principal">
+    <nav>
       <div className="nav-container">
-        {NAV_ITEMS.map(({ id, label }) => (
+        {links.map((link) => (
           <button
-            key={id}
-            type="button"
-            className={`nav-link${activeId === id ? " active" : ""}`}
-            onClick={() => scrollTo(id)}
-            aria-label={`Ir para seção ${label}`}
-            aria-current={activeId === id ? "true" : undefined}
+            key={link.id}
+            onClick={() => scrollTo(link.id)}
+            className={clsx("nav-link", active === link.id && "active")}
           >
-            {label}
+            {link.label}
           </button>
         ))}
+        <ThemeToggle />
       </div>
     </nav>
   );
-});
-
-export default Nav;
+}
