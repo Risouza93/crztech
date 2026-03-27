@@ -1,9 +1,12 @@
 import { useEffect, useState, useCallback } from "react";
+import emailjs from "@emailjs/browser";
 import "./App.css";
 import "./style.css";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Sections from "./components/Sections";
+
+emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
 
 function App() {
   const [form, setForm] = useState({ nome: "", email: "" });
@@ -37,7 +40,7 @@ function App() {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.nome || !form.email) {
       setStatus({ mensagem: "⚠️ Preencha todos os campos!", tipo: "erro" });
@@ -45,11 +48,20 @@ function App() {
     }
     setLoading(true);
     setStatus({ mensagem: "", tipo: "" });
-    setTimeout(() => {
+
+    try {
+      await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        { nome: form.nome, email: form.email }
+      );
       setStatus({ mensagem: "✅ Mensagem enviada com sucesso!", tipo: "sucesso" });
       setForm({ nome: "", email: "" });
+    } catch (error) {
+      setStatus({ mensagem: "❌ Erro ao enviar. Tente novamente.", tipo: "erro" });
+    } finally {
       setLoading(false);
-    }, 2000);
+    }
   };
 
   return (
