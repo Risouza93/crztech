@@ -1,24 +1,33 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 const skills = [
-  { category: "Automação & IA", items: [
-    { name: "n8n / Make (Integromat)", level: 100 },
-    { name: "LangChain / GPT APIs", level: 100 },
-    { name: "Power Automate", level: 100 },
-    { name: "Python (automação)", level: 100 },
-  ]},
-  { category: "Integrações & APIs", items: [
-    { name: "REST APIs", level: 100 },
-    { name: "ERPs (TOTVS, FOCCO, Bling)", level: 100 },
-    { name: "TMS / WMS", level: 100 },
-    { name: "Node.js", level: 100 },
-  ]},
-  { category: "Frontend & Ferramentas", items: [
-    { name: "React / TypeScript", level: 100 },
-    { name: "Power BI", level: 100 },
-    { name: "Git / Vercel / CI-CD", level: 100 },
-    { name: "UX / UI", level: 100 },
-  ]},
+  {
+    category: 'Automação & IA',
+    items: [
+      { name: 'n8n / Make (Integromat)', level: 100 },
+      { name: 'LangChain / GPT APIs', level: 100 },
+      { name: 'Power Automate', level: 100 },
+      { name: 'Python (automação)', level: 100 },
+    ],
+  },
+  {
+    category: 'Integrações & APIs',
+    items: [
+      { name: 'REST APIs', level: 100 },
+      { name: 'ERPs (TOTVS, FOCCO, Bling)', level: 100 },
+      { name: 'TMS / WMS', level: 100 },
+      { name: 'Node.js', level: 100 },
+    ],
+  },
+  {
+    category: 'Frontend & Ferramentas',
+    items: [
+      { name: 'React / TypeScript / Javascript', level: 100 },
+      { name: 'Power BI', level: 100 },
+      { name: 'Git / Vercel / CI-CD', level: 100 },
+      { name: 'UX / UI', level: 100 },
+    ],
+  },
 ];
 
 export default function Skills() {
@@ -29,7 +38,7 @@ export default function Skills() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.style.width = entry.target.dataset.level + "%";
+            entry.target.style.width = entry.target.dataset.level + '%';
           }
         });
       },
@@ -56,8 +65,8 @@ export default function Skills() {
                   <div
                     className="skill-bar"
                     data-level={skill.level}
-                    ref={(el) => (barsRef.current.push(el))}
-                    style={{ width: "0%" }}
+                    ref={(el) => barsRef.current.push(el)}
+                    style={{ width: '0%' }}
                   />
                 </div>
               </div>
