@@ -11,12 +11,12 @@ emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
 
 export default function App() {
   const { form, status, loading, handleChange, handleSubmit } = useForm();
-  const { scrollTo, scrollContato } = useScrollSpy();
+  const { scrollTo, scrollContato, activeId } = useScrollSpy();
 
   return (
     <>
       <Header onScrollContato={scrollContato} />
-      <Nav scrollTo={scrollTo} />
+      <Nav scrollTo={scrollTo} activeId={activeId} />
       <main>
         <div className="container">
           <Sections

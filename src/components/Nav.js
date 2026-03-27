@@ -1,40 +1,26 @@
-import { memo, useState, useEffect } from "react";
-import clsx from "clsx";
+import { memo } from "react";
 
-const Nav = memo(function Nav({ scrollTo }) {
-  const [active, setActive] = useState("#resultados");
+const NAV_ITEMS = [
+  { id: "sobre",    label: "Sobre"    },
+  { id: "projetos", label: "Projetos" },
+  { id: "stack",    label: "Stack"    },
+  { id: "contato",  label: "Contato"  },
+];
 
-  useEffect(() => {
-    const sections = document.querySelectorAll("section");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(`#${entry.target.id}`);
-        });
-      },
-      { threshold: 0.4 }
-    );
-    sections.forEach((sec) => observer.observe(sec));
-    return () => observer.disconnect();
-  }, []);
-
-  const links = [
-    { id: "#resultados", label: "Resultados" },
-    { id: "#sobre", label: "Sobre" },
-    { id: "#experiencia", label: "Experiência" },
-    { id: "#contato", label: "Contato" },
-  ];
-
+const Nav = memo(function Nav({ scrollTo, activeId }) {
   return (
-    <nav>
+    <nav aria-label="Navegação principal">
       <div className="nav-container">
-        {links.map((link) => (
+        {NAV_ITEMS.map(({ id, label }) => (
           <button
-            key={link.id}
-            onClick={() => scrollTo(link.id)}
-            className={clsx("nav-link", active === link.id && "active")}
+            key={id}
+            type="button"
+            className={`nav-link${activeId === id ? " active" : ""}`}
+            onClick={() => scrollTo(id)}
+            aria-label={`Ir para seção ${label}`}
+            aria-current={activeId === id ? "true" : undefined}
           >
-            {link.label}
+            {label}
           </button>
         ))}
       </div>

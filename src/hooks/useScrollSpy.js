@@ -1,27 +1,43 @@
-import { useEffect, useCallback } from "react";
+import { useEffect, useRef, useCallback, useState } from "react";
+
+const SECTION_IDS = ["sobre", "projetos", "stack", "contato"];
 
 export function useScrollSpy() {
+  const [activeId, setActiveId] = useState("");
+  const contatoRef = useRef(null);
+
   useEffect(() => {
-    const sections = document.querySelectorAll("section");
+    contatoRef.current = document.getElementById("contato");
+  }, []);
+
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add("show");
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            setActiveId(entry.target.id);
+          }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.15, rootMargin: "-80px 0px -30% 0px" }
     );
-    sections.forEach((sec) => observer.observe(sec));
-    return () => observer.disconnect();
+
+    const sections = SECTION_IDS
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    sections.forEach((el) => observer.observe(el));
+    return () => sections.forEach((el) => observer.unobserve(el));
   }, []);
 
   const scrollTo = useCallback((id) => {
-    document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, []);
 
   const scrollContato = useCallback(() => {
-    scrollTo("#contato");
-  }, [scrollTo]);
+    contatoRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
 
-  return { scrollTo, scrollContato };
+  return { scrollTo, scrollContato, activeId };
 }
