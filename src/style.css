@@ -20,6 +20,11 @@ body {
   user-select: none;
 }
 
+button {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 /* Permite seleção APENAS em inputs e textarea */
 input,
 textarea {

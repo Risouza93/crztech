@@ -1,4 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
+import emailjs from "@emailjs/browser";
 import { ThemeProvider } from "./context/ThemeContext";
 import "./App.css";
 import "./style.css";
@@ -24,34 +25,29 @@ function App() {
   useEffect(() => {
     const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("show")),
+      (entries) =>
+        entries.forEach((e) => e.isIntersecting && e.target.classList.add("show")),
       { threshold: 0.15 }
     );
     sections.forEach((sec) => observer.observe(sec));
     return () => observer.disconnect();
   }, []);
 
-  /* ========================= */
-  /* 🔒 PROTEÇÃO JS (CAMADA 2) */
-  /* ========================= */
   useEffect(() => {
-    // Bloqueia botão direito
     const blockContextMenu = (e) => e.preventDefault();
 
-    // Bloqueia atalhos comuns
     const blockKeys = (e) => {
+      if (!e.key) return;
       const key = e.key.toLowerCase();
 
-      // Permite digitação normal em inputs/textarea
       const isInput =
-        e.target.tagName === "INPUT" ||
-        e.target.tagName === "TEXTAREA";
-
+        e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA";
       if (isInput) return;
 
       if (
-        (e.ctrlKey && ["c", "u", "s", "a"].includes(key)) ||
-        e.key === "F12"
+        ["f5", "escape"].includes(key) ||
+        e.key === "F12" ||
+        (e.ctrlKey && ["c", "u", "s", "a"].includes(key))
       ) {
         e.preventDefault();
       }
@@ -73,16 +69,43 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (!form.nome || !form.email) {
       setToast({ message: "⚠️ Preencha todos os campos!", type: "erro" });
       return;
     }
+
     setLoading(true);
-    setTimeout(() => {
-      setToast({ message: "✅ Mensagem enviada com sucesso!", type: "sucesso" });
-      setForm({ nome: "", email: "", mensagem: "" });
-      setLoading(false);
-    }, 2000);
+
+    emailjs
+      .send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        {
+          nome: form.nome,
+          email: form.email,
+          mensagem: form.mensagem,
+        },
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          setToast({
+            message: "✅ Mensagem enviada com sucesso!",
+            type: "sucesso",
+          });
+          setForm({ nome: "", email: "", mensagem: "" });
+          setLoading(false);
+        },
+        (error) => {
+          console.error("Erro EmailJS:", error);
+          setToast({
+            message: "⚠️ Erro ao enviar: " + error.text,
+            type: "erro",
+          });
+          setLoading(false);
+        }
+      );
   };
 
   return (
