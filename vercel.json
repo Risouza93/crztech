@@ -4,7 +4,6 @@
   "installCommand": "npm install",
   "buildCommand": "react-scripts build",
   "outputDirectory": "build",
-
   "headers": [
     {
       "source": "/(.*)",
@@ -27,7 +26,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; connect-src 'self' https://*.emailjs.com https://app.typebot.com https://www.linkedin.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; frame-ancestors 'none';"
+          "value": "default-src 'self'; img-src 'self' data: https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; connect-src 'self' https://*.emailjs.com https://app.typebot.com https://www.linkedin.com; frame-ancestors 'none';"
         }
       ]
     }
