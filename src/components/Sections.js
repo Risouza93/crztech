@@ -1,7 +1,32 @@
 import { memo } from "react";
+import { motion } from "framer-motion";
 import Sobre from "./Sobre";
 import Projetos from "./Projetos";
 import Stack from "./Stack";
+
+const sectionVariants = {
+  hidden: { opacity: 0, y: 60 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+const AnimatedSection = memo(function AnimatedSection({ id, label, children }) {
+  return (
+    <motion.section
+      id={id}
+      aria-label={label}
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.15 }}
+    >
+      {children}
+    </motion.section>
+  );
+});
 
 const Contato = memo(function Contato({ form, status, loading, handleChange, handleSubmit }) {
   return (
@@ -43,15 +68,15 @@ const Contato = memo(function Contato({ form, status, loading, handleChange, han
 const Sections = memo(function Sections({ form, status, loading, handleChange, handleSubmit }) {
   return (
     <>
-      <section id="sobre"    aria-label="Sobre mim">    <Sobre />    </section>
-      <section id="projetos" aria-label="Projetos">     <Projetos /> </section>
-      <section id="stack"    aria-label="Stack técnica"><Stack />    </section>
-      <section id="contato"  aria-label="Contato">
+      <AnimatedSection id="sobre"    label="Sobre mim">    <Sobre />    </AnimatedSection>
+      <AnimatedSection id="projetos" label="Projetos">     <Projetos /> </AnimatedSection>
+      <AnimatedSection id="stack"    label="Stack técnica"><Stack />    </AnimatedSection>
+      <AnimatedSection id="contato"  label="Contato">
         <Contato
           form={form} status={status} loading={loading}
           handleChange={handleChange} handleSubmit={handleSubmit}
         />
-      </section>
+      </AnimatedSection>
     </>
   );
 });
