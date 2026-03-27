@@ -7,10 +7,11 @@ import Nav from "./components/Nav";
 import Sections from "./components/Sections";
 import ScrollToTop from "./components/ScrollToTop";
 import CustomCursor from "./components/CustomCursor";
+import Toast from "./components/Toast";
 
 function App() {
   const [form, setForm] = useState({ nome: "", email: "", mensagem: "" });
-  const [status, setStatus] = useState({ mensagem: "", tipo: "" });
+  const [toast, setToast] = useState({ message: "", type: "" });
   const [loading, setLoading] = useState(false);
 
   const scrollTo = useCallback((id) => {
@@ -37,13 +38,12 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!form.nome || !form.email) {
-      setStatus({ mensagem: "⚠️ Preencha todos os campos!", tipo: "erro" });
+      setToast({ message: "⚠️ Preencha todos os campos!", type: "erro" });
       return;
     }
     setLoading(true);
-    setStatus({ mensagem: "", tipo: "" });
     setTimeout(() => {
-      setStatus({ mensagem: "✅ Mensagem enviada com sucesso!", tipo: "sucesso" });
+      setToast({ message: "✅ Mensagem enviada com sucesso!", type: "sucesso" });
       setForm({ nome: "", email: "", mensagem: "" });
       setLoading(false);
     }, 2000);
@@ -53,11 +53,16 @@ function App() {
     <ThemeProvider>
       <CustomCursor />
       <ScrollToTop />
+      <Toast
+        message={toast.message}
+        type={toast.type}
+        onClose={() => setToast({ message: "", type: "" })}
+      />
       <Header scrollContato={scrollContato} />
       <Nav scrollTo={scrollTo} />
       <Sections
         form={form}
-        status={status}
+        status={toast}
         loading={loading}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
