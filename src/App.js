@@ -31,6 +31,41 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
+  /* ========================= */
+  /* 🔒 PROTEÇÃO JS (CAMADA 2) */
+  /* ========================= */
+  useEffect(() => {
+    // Bloqueia botão direito
+    const blockContextMenu = (e) => e.preventDefault();
+
+    // Bloqueia atalhos comuns
+    const blockKeys = (e) => {
+      const key = e.key.toLowerCase();
+
+      // Permite digitação normal em inputs/textarea
+      const isInput =
+        e.target.tagName === "INPUT" ||
+        e.target.tagName === "TEXTAREA";
+
+      if (isInput) return;
+
+      if (
+        (e.ctrlKey && ["c", "u", "s", "a"].includes(key)) ||
+        e.key === "F12"
+      ) {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener("contextmenu", blockContextMenu);
+    document.addEventListener("keydown", blockKeys);
+
+    return () => {
+      document.removeEventListener("contextmenu", blockContextMenu);
+      document.removeEventListener("keydown", blockKeys);
+    };
+  }, []);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));

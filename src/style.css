@@ -7,6 +7,28 @@
   box-sizing: border-box;
 }
 
+
+/* ========================= */
+/* 🔒 PROTEÇÃO DE CONTEÚDO */
+/* ========================= */
+
+/* Bloqueia seleção de texto no site */
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Permite seleção APENAS em inputs e textarea */
+input,
+textarea {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
 /* ========================= */
 /* TEMA — VARIÁVEIS */
 /* ========================= */
