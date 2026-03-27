@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Sobre from "./Sobre";
 import Projetos from "./Projetos";
 import Stack from "./Stack";
+import Skills from "./Skills";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 60 },
@@ -71,6 +72,7 @@ const Sections = memo(function Sections({ form, status, loading, handleChange, h
       <AnimatedSection id="sobre"    label="Sobre mim">    <Sobre />    </AnimatedSection>
       <AnimatedSection id="projetos" label="Projetos">     <Projetos /> </AnimatedSection>
       <AnimatedSection id="stack"    label="Stack técnica"><Stack />    </AnimatedSection>
+      <AnimatedSection id="skills"   label="Skills">       <Skills />   </AnimatedSection>
       <AnimatedSection id="contato"  label="Contato">
         <Contato
           form={form} status={status} loading={loading}

@@ -5,9 +5,11 @@ import "./style.css";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Sections from "./components/Sections";
+import ScrollToTop from "./components/ScrollToTop";
+import CustomCursor from "./components/CustomCursor";
 
 function App() {
-  const [form, setForm] = useState({ nome: "", email: "" });
+  const [form, setForm] = useState({ nome: "", email: "", mensagem: "" });
   const [status, setStatus] = useState({ mensagem: "", tipo: "" });
   const [loading, setLoading] = useState(false);
 
@@ -15,18 +17,12 @@ function App() {
     document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
   }, []);
 
-  const scrollContato = useCallback(() => {
-    scrollTo("#contato");
-  }, [scrollTo]);
+  const scrollContato = useCallback(() => scrollTo("#contato"), [scrollTo]);
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add("show");
-        });
-      },
+      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("show")),
       { threshold: 0.15 }
     );
     sections.forEach((sec) => observer.observe(sec));
@@ -48,13 +44,15 @@ function App() {
     setStatus({ mensagem: "", tipo: "" });
     setTimeout(() => {
       setStatus({ mensagem: "✅ Mensagem enviada com sucesso!", tipo: "sucesso" });
-      setForm({ nome: "", email: "" });
+      setForm({ nome: "", email: "", mensagem: "" });
       setLoading(false);
     }, 2000);
   };
 
   return (
     <ThemeProvider>
+      <CustomCursor />
+      <ScrollToTop />
       <Header scrollContato={scrollContato} />
       <Nav scrollTo={scrollTo} />
       <Sections

@@ -64,8 +64,21 @@
       ]
     }
     </script>
-  </head>
+  <script>
+  (function() {
+    var theme = localStorage.getItem('theme');
+    if (!theme || theme === 'dark') {
+      theme = 'dark';
+    }
+    localStorage.setItem('theme', theme);
+    document.documentElement.setAttribute('data-theme', theme);
+    document.body && document.body.setAttribute('data-theme', theme);
+  })();
+</script>
+</head>
   <body>
+  
+  
     <noscript>Você precisa habilitar JavaScript para usar este site.</noscript>
     <div id="root"></div>
   </body>
