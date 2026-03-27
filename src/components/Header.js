@@ -1,6 +1,7 @@
+import { memo } from "react";
 import { motion } from "framer-motion";
 
-export default function Header({ onScrollContato }) {
+const Header = memo(function Header({ onScrollContato }) {
   return (
     <header>
       <div className="container">
@@ -13,8 +14,8 @@ export default function Header({ onScrollContato }) {
             src={`${process.env.PUBLIC_URL}/pictures/perfil.jpeg`}
             alt="Richard Feitosa"
             style={{
-              width: 240,
-              height: 240,
+              width: 220,
+              height: 220,
               borderRadius: "50%",
               objectFit: "cover",
               border: "3px solid rgba(56,189,248,0.4)",
@@ -55,4 +56,6 @@ export default function Header({ onScrollContato }) {
       </div>
     </header>
   );
-}
+});
+
+export default Header;

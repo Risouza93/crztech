@@ -1,4 +1,6 @@
-export default function Sections({ form, status, loading, handleChange, handleSubmit }) {
+import { memo } from "react";
+
+const Sections = memo(function Sections({ form, status, loading, handleChange, handleSubmit }) {
   return (
     <>
       <section id="resultados">
@@ -95,4 +97,6 @@ export default function Sections({ form, status, loading, handleChange, handleSu
       </section>
     </>
   );
-}
+});
+
+export default Sections;

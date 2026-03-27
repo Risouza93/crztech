@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { memo, useState, useEffect } from "react";
 import clsx from "clsx";
 
-export default function Nav({ scrollTo }) {
+const Nav = memo(function Nav({ scrollTo }) {
   const [active, setActive] = useState("#resultados");
 
   useEffect(() => {
@@ -40,4 +40,6 @@ export default function Nav({ scrollTo }) {
       </div>
     </nav>
   );
-}
+});
+
+export default Nav;
