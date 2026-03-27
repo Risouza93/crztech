@@ -2,22 +2,22 @@ import { useEffect, useRef } from "react";
 
 const skills = [
   { category: "Automação & IA", items: [
-    { name: "n8n / Make (Integromat)", level: 95 },
-    { name: "LangChain / GPT APIs", level: 88 },
-    { name: "Power Automate", level: 85 },
-    { name: "Python (automação)", level: 80 },
+    { name: "n8n / Make (Integromat)", level: 100 },
+    { name: "LangChain / GPT APIs", level: 100 },
+    { name: "Power Automate", level: 100 },
+    { name: "Python (automação)", level: 100 },
   ]},
   { category: "Integrações & APIs", items: [
-    { name: "REST APIs", level: 92 },
-    { name: "ERPs (TOTVS, FOCCO, Bling)", level: 88 },
-    { name: "TMS / WMS", level: 85 },
-    { name: "Node.js", level: 78 },
+    { name: "REST APIs", level: 100 },
+    { name: "ERPs (TOTVS, FOCCO, Bling)", level: 100 },
+    { name: "TMS / WMS", level: 100 },
+    { name: "Node.js", level: 100 },
   ]},
   { category: "Frontend & Ferramentas", items: [
-    { name: "React / TypeScript", level: 82 },
-    { name: "Power BI", level: 85 },
-    { name: "Git / Vercel / CI-CD", level: 88 },
-    { name: "UX / UI", level: 75 },
+    { name: "React / TypeScript", level: 100 },
+    { name: "Power BI", level: 100 },
+    { name: "Git / Vercel / CI-CD", level: 100 },
+    { name: "UX / UI", level: 100 },
   ]},
 ];
 
