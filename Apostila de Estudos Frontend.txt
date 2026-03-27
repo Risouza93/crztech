@@ -1,0 +1,1126 @@
+🌐 Aula 1 — O que é HTML?
+1️⃣ Conceito ELI5 (explicação de criança)
+
+Imagine que você vai construir uma casa.
+
+Antes de pintar, decorar ou colocar móveis, você precisa do esqueleto da casa:
+
+onde fica a porta
+
+onde ficam os quartos
+
+onde fica a cozinha
+
+Esse esqueleto da casa é o HTML.
+
+Ele organiza as coisas, mas não deixa bonito.
+
+Na internet funciona assim:
+
+Tecnologia	Função
+HTML	Estrutura
+CSS	Aparência
+JavaScript	Comportamento
+
+Uma analogia divertida:
+
+HTML é o corpo
+CSS é a roupa
+JavaScript é o cérebro
+
+Sem HTML… nada existe na página.
+
+🧠 Por que isso importa (Big Tech)
+
+Empresas gigantes como:
+
+Meta
+
+Google
+
+Netflix
+
+têm milhões de páginas rodando.
+
+Se o HTML for mal feito:
+
+leitores de tela não funcionam
+
+SEO quebra
+
+performance piora
+
+manutenção vira um inferno
+
+Engenheiros frontend seniores são obcecados por HTML semântico.
+
+🧩 Seu primeiro código HTML
+
+Crie um arquivo chamado:
+
+index.html
+
+Agora coloque isto dentro:
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meu Primeiro Site</title>
+</head>
+
+<body>
+
+  <h1>Olá mundo!</h1>
+
+  <p>Este é meu primeiro site.</p>
+
+  <button>Clique em mim</button>
+
+</body>
+</html>
+
+Agora vamos desmontar isso linha por linha.
+
+🧠 Explicação linha por linha
+<!DOCTYPE html>
+
+Isso diz ao navegador:
+
+"Ei navegador, este arquivo usa HTML moderno."
+
+<html>
+
+Aqui começa todo o site.
+
+Tudo que aparece na página precisa estar dentro dessa tag.
+
+<head>
+
+Essa parte guarda informações do site, não o que aparece na tela.
+
+<title>Meu Primeiro Site</title>
+
+Isso define o nome que aparece na aba do navegador.
+
+<body>
+
+Agora começa o conteúdo visível da página.
+
+<h1>Olá mundo!</h1>
+
+h1 significa Heading 1.
+
+É o título principal da página.
+
+<p>Este é meu primeiro site.</p>
+
+p significa parágrafo.
+
+Texto normal.
+
+<button>Clique em mim</button>
+
+Um botão clicável.
+
+Depois vamos ensinar o JavaScript a reagir ao clique.
+
+🎯 Desafio prático (10 minutos)
+
+Crie uma página chamada:
+
+perfil.html
+
+Com:
+
+Seu nome
+
+Uma descrição sobre você
+
+Um botão
+
+Um título
+
+Exemplo:
+
+<h1>Richard</h1>
+
+<p>Sou apaixonado por tecnologia e estou aprendendo frontend.</p>
+
+<button>Fale comigo</button>
+
+Abra o arquivo no navegador.
+
+Você acabou de criar seu primeiro site.
+
+🧠 Curiosidade nerd da web
+
+Quando o engenheiro do CERN chamado
+Tim Berners-Lee criou a web em 1991, HTML tinha só 18 tags.
+
+Hoje temos mais de 100.
+
+E mesmo assim, 90% dos sites usam menos de 20 delas.
+
+🧭 Próximo passo da jornada
+
+Se você quiser seguir a progressão correta de engenheiro frontend, o próximo bloco é:
+
+HTML essencial
+
+1️⃣ h1 até h6 — títulos
+2️⃣ p — texto
+3️⃣ a — links
+4️⃣ img — imagens
+5️⃣ ul / li — listas
+6️⃣ div — container
+
+Essas 6 tags constroem 80% da internet.
+
+💡 Agora vem uma curiosidade divertida.
+
+Existe uma página inteira da internet feita só com HTML puro, sem CSS nem JS — e mesmo assim recebe milhões de acessos.
+
+Ela pertence à empresa:
+
+Google
+
+Se abrir a versão modo texto do Google, você percebe algo curioso:
+HTML bem feito funciona mesmo sem CSS ou JS.
+
+Engenharia elegante tem essa beleza.
+
+MAPA MENTAL DO FRONTEND (2026)
+
+Imagine camadas de uma cidade.
+
+Cada camada resolve um problema diferente.
+
+FRONTEND DEVELOPMENT
+│
+├── 1 FUNDAMENTOS DA WEB
+│
+├── 2 LINGUAGEM DE PROGRAMAÇÃO
+│
+├── 3 FRAMEWORK DE INTERFACE
+│
+├── 4 META FRAMEWORK
+│
+├── 5 GERENCIAMENTO DE ESTADO
+│
+├── 6 COMUNICAÇÃO COM BACKEND
+│
+├── 7 PERFORMANCE
+│
+├── 8 TESTES
+│
+├── 9 DEVOPS FRONTEND
+│
+└── 10 ARQUITETURA SENIOR
+
+Agora vamos entender cada camada com analogia real.
+
+1️⃣ FUNDAMENTOS DA WEB
+
+As fundações do prédio.
+
+Sem isso o prédio cai.
+
+Tecnologias:
+
+HTML
+
+CSS
+
+JavaScript básico
+
+Analogia simples:
+
+HTML = estrutura da casa
+CSS = decoração da casa
+JS = eletricidade da casa
+
+Todo site do mundo usa isso.
+
+Inclusive o interface do ChatGPT feito pela OpenAI começa aqui.
+
+2️⃣ LINGUAGEM DE PROGRAMAÇÃO
+
+Aqui mora o cérebro.
+
+Tecnologia principal:
+
+JavaScript
+
+E sua versão moderna:
+
+TypeScript
+
+Analogia divertida:
+
+JavaScript é como falar português.
+
+TypeScript é português com regras gramaticais obrigatórias.
+
+Resultado:
+
+menos bugs
+menos caos
+mais previsibilidade
+
+Por isso praticamente todas as Big Techs migraram para TypeScript.
+
+3️⃣ FRAMEWORK DE INTERFACE
+
+Agora entra a fábrica de interfaces.
+
+Tecnologia dominante:
+
+React
+
+Criado por:
+
+Meta
+
+Analogia LEGO:
+
+Você cria peças pequenas:
+
+Botão
+Card
+Navbar
+Perfil
+
+Depois monta sistemas gigantes:
+
+Instagram
+Netflix
+Airbnb
+4️⃣ META FRAMEWORK
+
+React sozinho é só um motor.
+
+Você ainda precisa montar:
+
+rotas
+
+SEO
+
+servidor
+
+otimizações
+
+Aí entra o Next.js.
+
+Ele é tipo React com superpoderes.
+
+Criado pela empresa:
+
+Vercel
+
+Ele adiciona:
+
+roteamento automático
+
+renderização no servidor
+
+performance absurda
+
+SEO
+
+Hoje a maioria das startups começa com Next.js direto.
+
+5️⃣ GERENCIAMENTO DE ESTADO
+
+Agora entra um problema clássico.
+
+Imagine um app grande.
+
+Muitos componentes precisam acessar dados:
+
+usuário logado
+
+carrinho
+
+tema
+
+notificações
+
+Guardar isso em cada componente vira caos.
+
+Então criamos estado global.
+
+Ferramentas modernas:
+
+Zustand
+
+Redux (clássico)
+
+Context API
+
+Analogia:
+
+Estado local = bolso da calça
+Estado global = geladeira da casa
+
+6️⃣ COMUNICAÇÃO COM BACKEND
+
+Frontend não vive sozinho.
+
+Ele conversa com servidores.
+
+Tipos de comunicação:
+
+REST API
+GraphQL
+Server Actions (Next.js moderno)
+
+Biblioteca dominante:
+
+TanStack Query
+
+Ela faz:
+
+cache
+
+sincronização
+
+refetch automático
+
+controle de loading
+
+Isso é engenharia de dados frontend.
+
+7️⃣ PERFORMANCE
+
+Empresas como Google descobriram algo curioso:
+
+100ms de atraso reduz conversão.
+
+Então frontend precisa otimizar:
+
+code splitting
+
+lazy loading
+
+memoização
+
+streaming
+
+Frontend moderno é quase engenharia de performance.
+
+8️⃣ TESTES
+
+Código sem teste é uma bomba-relógio.
+
+Ferramentas comuns:
+
+Jest
+Testing Library
+Playwright
+Cypress
+
+Testes garantem que mudanças não quebrem o sistema.
+
+9️⃣ DEVOPS FRONTEND
+
+Depois de criar o site, ele precisa ir para a internet.
+
+Ferramentas:
+
+Git
+GitHub
+CI/CD
+Vercel
+Netlify
+Docker
+
+Deploy moderno pode ser literalmente um clique.
+
+🔟 ARQUITETURA SENIOR
+
+Aqui mora a magia negra.
+
+Coisas que seniors dominam:
+
+Design Systems
+
+Microfrontends
+
+Monorepos
+
+Performance extrema
+
+Escalabilidade
+
+É aqui que engenheiros que trabalham em lugares como
+Netflix ou Airbnb passam grande parte do tempo.
+
+📊 O CAMINHO REALISTA (Zero → Senior)
+HTML / CSS
+      ↓
+JavaScript
+      ↓
+TypeScript
+      ↓
+React
+      ↓
+Next.js
+      ↓
+State Management
+      ↓
+APIs
+      ↓
+Performance
+      ↓
+Arquitetura
+
+Esse é literalmente o pipeline de aprendizado de quase todo frontend engineer moderno.
+
+🧭 Nosso progresso
+ETAPA ATUAL
+
+Mapa mental completo ✔
+20 tags HTML essenciais ⏳
+Projeto 1 (primeiro site real) ⏳
+🧾 PROMPT DE RETORNO (para nunca perder o ponto)
+
+Salve isso. É sua âncora de continuidade.
+
+Estamos seguindo o "Método Jack - Jornada Frontend".
+
+Último ponto estudado:
+MAPA MENTAL DO FRONTEND 2026.
+
+Próximo passo:
+As 20 tags HTML que constroem 90% da internet.
+
+Continue exatamente de onde paramos.
+
+Se você colar isso em qualquer nova conversa, retomamos exatamente aqui.
+
+Uma curiosidade deliciosa antes de avançarmos.
+
+Os engenheiros da Meta descobriram algo analisando bilhões de páginas:
+
+menos de 25 tags HTML são responsáveis por quase toda a web.
+
+Ou seja…
+
+Aprender as tags certas te dá superpoder.
+
+E é exatamente isso que vamos destrinchar na próxima etapa.
+
+🧠 As 20 Tags HTML que constroem 90% da Internet
+
+Para não virar um caos mental, vamos dividir em 4 grupos naturais.
+
+ESTRUTURA
+TEXTO
+NAVEGAÇÃO
+MÍDIA & FORMULÁRIOS
+🏗️ 1 — TAGS DE ESTRUTURA (o esqueleto da página)
+
+Essas organizam o layout da página.
+
+<html>
+
+É o container do site inteiro.
+
+<html>
+  <!-- todo o site vive aqui -->
+</html>
+<head>
+
+Informações para o navegador.
+
+<head>
+  <title>Meu Site</title>
+</head>
+
+Nada daqui aparece visualmente.
+
+<body>
+
+Aqui vive tudo que aparece na tela.
+
+<body>
+  <h1>Olá mundo</h1>
+</body>
+<header>
+
+Topo do site.
+
+<header>
+  <h1>Meu Blog</h1>
+</header>
+
+Normalmente contém:
+
+logo
+
+menu
+
+título
+
+<main>
+
+Conteúdo principal da página.
+
+<main>
+  <p>Conteúdo principal</p>
+</main>
+
+Motores de busca gostam muito dessa tag.
+
+<footer>
+
+Rodapé.
+
+<footer>
+  <p>Copyright 2026</p>
+</footer>
+📝 2 — TAGS DE TEXTO
+
+Essas exibem conteúdo textual.
+
+<h1> até <h6>
+
+Títulos.
+
+<h1>Título principal</h1>
+<h2>Subtítulo</h2>
+<h3>Seção</h3>
+
+Regra de ouro:
+
+h1 = título da página
+h2 = seções
+h3 = subseções
+<p>
+
+Parágrafo.
+
+<p>Este é um texto.</p>
+<span>
+
+Pequeno pedaço de texto.
+
+Muito usado para estilizar algo específico.
+
+<p>Meu nome é <span>Richard</span></p>
+<strong>
+
+Texto importante.
+
+<strong>Atenção!</strong>
+
+Navegadores geralmente deixam negrito.
+
+🧭 3 — TAGS DE NAVEGAÇÃO
+
+Permitem navegar pelo site.
+
+<a> (link)
+
+Uma das tags mais importantes da web.
+
+<a href="https://google.com">
+  Ir para o Google
+</a>
+
+A web inteira funciona baseada nisso.
+
+Foi literalmente a invenção revolucionária de
+Tim Berners-Lee.
+
+<nav>
+
+Container de navegação.
+
+<nav>
+  <a href="/">Home</a>
+  <a href="/sobre">Sobre</a>
+</nav>
+
+Menus quase sempre usam isso.
+
+<ul> lista
+
+Lista não ordenada.
+
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+<li> item da lista
+<li>Produto</li>
+🖼️ 4 — MÍDIA
+
+Conteúdo visual.
+
+<img>
+
+Imagem.
+
+<img src="foto.jpg" alt="Minha foto">
+
+Explicação:
+
+src = arquivo da imagem
+alt = descrição (acessibilidade)
+<video>
+
+Vídeo.
+
+<video controls>
+  <source src="video.mp4">
+</video>
+📝 5 — FORMULÁRIOS
+
+Sites precisam receber dados.
+
+<form>
+
+Container do formulário.
+
+<form>
+</form>
+<input>
+
+Campo de entrada.
+
+<input type="text" placeholder="Seu nome">
+<button>
+
+Botão.
+
+<button>Enviar</button>
+<label>
+
+Descrição do campo.
+
+<label>Nome</label>
+<input type="text">
+🎯 Mini exemplo juntando várias tags
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Perfil</title>
+</head>
+
+<body>
+
+<header>
+  <h1>Richard</h1>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#">Contato</a>
+</nav>
+
+<main>
+
+  <img src="foto.jpg" alt="Foto de perfil">
+
+  <p>Sou apaixonado por tecnologia.</p>
+
+  <button>Fale comigo</button>
+
+</main>
+
+<footer>
+  <p>2026</p>
+</footer>
+
+</body>
+</html>
+
+Isso já parece um site real.
+
+🧠 Curiosidade de engenheiro
+
+O site inteiro da Wikipedia é basicamente:
+
+HTML
++
+CSS simples
++
+pouquíssimo JavaScript
+
+Mesmo assim suporta centenas de milhões de usuários.
+
+Isso mostra uma verdade curiosa da engenharia:
+
+simplicidade bem feita escala absurdamente.
+
+📍 Nosso progresso
+MAPA MENTAL ✔
+20 TAGS HTML ✔
+PROJETO 1 ⏳
+
+🚀 Projeto 1 — Seu Primeiro Site Real
+1️⃣ Conceito ELI5 (a analogia)
+
+Pense num cartão de visita digital.
+Em vez de papel, você tem uma página web que diz:
+
+quem você é
+
+o que você faz
+
+como falar com você
+
+É o equivalente digital de bater na porta e dizer: “Oi, este sou eu.”
+
+🧠 Por que isso importa (Big Tech)
+
+Engenheiros de empresas como Meta e Google começam protótipos exatamente assim: páginas simples com estrutura clara. Antes de performance, design ou microinterações, vem o HTML bem organizado.
+
+Uma estrutura limpa facilita:
+
+acessibilidade
+
+SEO
+
+manutenção
+
+evolução para React/Next.js depois
+
+🧩 Estrutura que vamos construir
+
+Nosso mini-site terá:
+
+Header
+Menu de navegação
+Seção sobre mim
+Seção de habilidades
+Contato
+Footer
+
+Visualmente:
+
+[HEADER]
+
+[MENU]
+
+[SOBRE MIM]
+
+[HABILIDADES]
+
+[CONTATO]
+
+[FOOTER]
+🧱 Código inicial (comentado linha por linha)
+
+Crie um arquivo:
+
+perfil.html
+
+Agora coloque isto dentro:
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Perfil de Richard</title>
+</head>
+
+<body>
+
+  <!-- Cabeçalho do site -->
+  <header>
+    <h1>Richard</h1>
+    <p>Analista de Projetos | Tecnologia | Automação</p>
+  </header>
+
+  <!-- Menu de navegação -->
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <!-- Conteúdo principal -->
+  <main>
+
+    <!-- Seção sobre mim -->
+    <section id="sobre">
+      <h2>Sobre mim</h2>
+      <p>
+        Sou apaixonado por tecnologia, automação e projetos de TI.
+        Atualmente estou aprendendo desenvolvimento frontend.
+      </p>
+    </section>
+
+    <!-- Lista de habilidades -->
+    <section id="habilidades">
+      <h2>Habilidades</h2>
+
+      <ul>
+        <li>Gestão de projetos</li>
+        <li>Automação de processos</li>
+        <li>Aprendendo Frontend</li>
+      </ul>
+
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+      <h2>Contato</h2>
+
+      <form>
+
+        <label>Nome</label>
+        <input type="text" placeholder="Seu nome">
+
+        <br><br>
+
+        <label>Email</label>
+        <input type="email" placeholder="Seu email">
+
+        <br><br>
+
+        <button>Enviar</button>
+
+      </form>
+
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>2026 - Meu primeiro site</p>
+  </footer>
+
+</body>
+
+</html>
+🔬 Pequeno detalhe de engenheiro
+
+Repare nestes elementos:
+
+header
+nav
+main
+section
+footer
+
+Eles são chamados de HTML semântico.
+
+Isso significa que o navegador entende o papel de cada parte da página.
+
+Motores de busca como os da Google usam essa estrutura para entender páginas.
+
+🎯 Desafio prático (10–15 minutos)
+
+Edite o código e personalize:
+
+1️⃣ coloque seu nome
+2️⃣ escreva uma bio curta
+3️⃣ adicione 3 habilidades reais
+4️⃣ adicione uma imagem sua com:
+
+<img src="foto.jpg" alt="Minha foto">
+🧠 Curiosidade nerd da web
+
+O primeiro site da história criado por
+Tim Berners-Lee em 1991 era basicamente uma página com links explicando o que era a web.
+
+Sem design. Sem CSS. Só HTML.
+
+E mesmo assim… mudou o mundo.
+
+📍 Nosso progresso na jornada
+Mapa mental frontend ✔
+20 tags HTML essenciais ✔
+Projeto 1 (HTML puro) ✔
+Próximo: CSS — transformar esse site em algo bonito
+
+FASE CSS — Transformando seu site em algo profissional
+1️⃣ Conceito ELI5
+
+Se o HTML é a casa…
+
+O CSS é:
+
+pintura 🎨
+móveis 🛋️
+iluminação 💡
+organização dos cômodos
+
+Sem CSS, seu site parece um documento do Word.
+Com CSS… ele começa a parecer um produto real.
+
+🧠 Por que isso importa (nível Big Tech)
+
+Empresas como Netflix e Airbnb investem MUITO em:
+
+experiência visual
+consistência
+responsividade
+
+Um frontend bonito não é luxo. É conversão.
+
+Um layout ruim = usuário sai em segundos.
+
+🧱 PASSO 1 — Conectar o CSS ao HTML
+
+Crie um arquivo:
+
+style.css
+
+Agora, dentro do seu HTML (perfil.html), adicione no <head>:
+
+<link rel="stylesheet" href="style.css">
+
+👉 Isso conecta o CSS ao seu site.
+
+🎨 PASSO 2 — Primeiro CSS da sua vida (comentado)
+
+Agora no style.css:
+
+/* Remove espaçamentos padrão do navegador */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #111;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Menu */
+nav {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Links do menu */
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+/* Efeito ao passar o mouse */
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Conteúdo principal */
+main {
+  padding: 20px;
+}
+
+/* Seções */
+section {
+  margin-bottom: 30px;
+}
+
+/* Rodapé */
+footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+🔍 Explicação simples (sem complicar)
+body { ... }
+
+👉 Aplica estilo no corpo inteiro do site
+
+header { ... }
+
+👉 Estiliza o topo
+
+nav a { ... }
+
+👉 Estiliza TODOS os links dentro do menu
+
+nav a:hover { ... }
+
+👉 Quando passa o mouse 👀
+
+🚀 Resultado
+
+Seu site vai sair disso:
+
+Texto cru feio 😐
+
+Pra isso:
+
+Layout organizado 😎
+Topo escuro
+Menu bonito
+Espaçamento profissional
+
+E isso com tipo… 40 linhas.
+
+🧠 Agora entra coisa de engenheiro (Flexbox)
+
+Vamos dar um upgrade nível real de mercado.
+
+🔥 PASSO 3 — Layout moderno com FLEXBOX
+
+Adicione no seu CSS:
+
+/* Centralizar conteúdo e limitar largura */
+main {
+  max-width: 800px;
+  margin: auto;
+}
+
+👉 Isso deixa o site com cara de produto real.
+
+Agora vamos melhorar o menu:
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+🧠 ELI5 do Flexbox
+
+Flexbox é tipo organizar coisas na mesa:
+
+display: flex → ativa o modo organização
+justify-content → organiza horizontal
+gap → espaço entre itens
+🎯 Desafio prático (nível upgrade)
+
+Agora você vai brincar um pouco:
+
+1️⃣ Troque cores (use cores mais modernas tipo: #0f172a, #1e293b)
+2️⃣ Aumente o tamanho do título (font-size)
+3️⃣ Centralize tudo bonitinho
+4️⃣ Coloque uma borda nas seções:
+
+section {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+}
+💡 Insight de nível alto
+
+Design simples + espaçamento bem feito = aparência premium
+
+Isso é exatamente o que times da Stripe fazem.
+
+Eles não complicam. Eles refinam.
+
+📍 Nosso progresso
+Mapa mental ✔
+HTML ✔
+Projeto 1 (estrutura) ✔
+CSS básico ✔
+Flexbox inicial ✔
+Próximo: Responsividade (mobile)
