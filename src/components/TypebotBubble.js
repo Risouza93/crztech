@@ -5,7 +5,7 @@ const TypebotBubble = () => {
   const [isHovered, setIsHovered] = useState(false);
   const typebotUrl = 'https://typebot.co/user-onboarding-rje58ah';
 
-  const buttonStyle = {
+  const getButtonStyle = (hovered) => ({
     position: 'fixed',
     bottom: '90px',
     right: '32px',
@@ -18,14 +18,14 @@ const TypebotBubble = () => {
     zIndex: 99999,
     cursor: 'pointer',
     transition: 'all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-    background: isHovered
+    background: hovered
       ? 'linear-gradient(135deg, #0ea5e9, #16a34a, #eab308)'
       : 'linear-gradient(135deg, #38bdf8, #22c55e)',
-    transform: isHovered ? 'scale(1.15) rotate(360deg)' : 'scale(1)',
-    boxShadow: isHovered
+    transform: hovered ? 'scale(1.15) rotate(360deg)' : 'scale(1)',
+    boxShadow: hovered
       ? '0 20px 48px rgba(56,189,248,0.7), 0 0 0 8px rgba(56,189,248,0.2)'
       : '0 8px 24px rgba(56,189,248,0.4)',
-  };
+  });
 
   return (
     <>
@@ -33,7 +33,8 @@ const TypebotBubble = () => {
         onClick={() => setIsOpen(!isOpen)}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        style={buttonStyle}
+        style={getButtonStyle(isHovered)}
+        type="button"
       >
         🤖
       </button>
