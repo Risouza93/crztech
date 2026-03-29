@@ -1,9 +1,9 @@
-import { memo } from "react";
-import { motion } from "framer-motion";
-import Sobre from "./Sobre";
-import Projetos from "./Projetos";
-import Stack from "./Stack";
-import Skills from "./Skills";
+import { memo } from 'react';
+import { motion } from 'framer-motion';
+import Sobre from './Sobre';
+import Projetos from './Projetos';
+import Stack from './Stack';
+import Skills from './Skills';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 60 },
@@ -29,32 +29,49 @@ const AnimatedSection = memo(function AnimatedSection({ id, label, children }) {
   );
 });
 
-const Contato = memo(function Contato({ form, status, loading, handleChange, handleSubmit }) {
+const Contato = memo(function Contato({
+  form,
+  status,
+  loading,
+  handleChange,
+  handleSubmit,
+}) {
   return (
     <div className="contact-card">
       <h2>Contato</h2>
       <form onSubmit={handleSubmit} noValidate className="glass-form">
         <input
-          name="nome" type="text" value={form.nome}
-          onChange={handleChange} placeholder="Seu nome"
-          required autoComplete="name"
+          name="nome"
+          type="text"
+          value={form.nome}
+          onChange={handleChange}
+          placeholder="Seu nome"
+          required
+          autoComplete="name"
         />
         <input
-          name="email" type="email" value={form.email}
-          onChange={handleChange} placeholder="seu@email.com"
-          required autoComplete="email"
+          name="email"
+          type="email"
+          value={form.email}
+          onChange={handleChange}
+          placeholder="seu@email.com"
+          required
+          autoComplete="email"
         />
         <textarea
-          name="mensagem" value={form.mensagem}
-          onChange={handleChange} placeholder="Como posso te ajudar?"
-          rows={5} required
+          name="mensagem"
+          value={form.mensagem}
+          onChange={handleChange}
+          placeholder="Como posso te ajudar?"
+          rows={5}
+          required
         />
         <button type="submit" className="cta-button" disabled={loading}>
-          {loading ? "Enviando…" : "Enviar mensagem"}
+          {loading ? 'Enviando…' : 'Enviar mensagem'}
         </button>
-        {status && typeof status === "string" && (
+        {status && typeof status === 'string' && (
           <p
-            className={`status-msg ${status.includes("sucesso") ? "status-msg--sucesso" : "status-msg--erro"}`}
+            className={`status-msg ${status.includes('sucesso') ? 'status-msg--sucesso' : 'status-msg--erro'}`}
             role="alert"
             aria-live="polite"
           >
@@ -66,17 +83,37 @@ const Contato = memo(function Contato({ form, status, loading, handleChange, han
   );
 });
 
-const Sections = memo(function Sections({ form, status, loading, handleChange, handleSubmit }) {
+const Sections = memo(function Sections({
+  form,
+  status,
+  loading,
+  handleChange,
+  handleSubmit,
+}) {
   return (
     <>
-      <AnimatedSection id="sobre"    label="Sobre mim">    <Sobre />    </AnimatedSection>
-      <AnimatedSection id="projetos" label="Projetos">     <Projetos /> </AnimatedSection>
-      <AnimatedSection id="stack"    label="Stack técnica"><Stack />    </AnimatedSection>
-      <AnimatedSection id="skills"   label="Skills">       <Skills />   </AnimatedSection>
-      <AnimatedSection id="contato"  label="Contato">
+      <AnimatedSection id="sobre" label="Sobre mim">
+        {' '}
+        <Sobre />{' '}
+      </AnimatedSection>
+      <AnimatedSection id="projetos" label="Projetos">
+        {' '}
+        <Projetos />{' '}
+      </AnimatedSection>
+      <AnimatedSection id="stack" label="Stack técnica">
+        <Stack />{' '}
+      </AnimatedSection>
+      <AnimatedSection id="skills" label="Skills">
+        {' '}
+        <Skills />{' '}
+      </AnimatedSection>
+      <AnimatedSection id="contato" label="Contato">
         <Contato
-          form={form} status={status} loading={loading}
-          handleChange={handleChange} handleSubmit={handleSubmit}
+          form={form}
+          status={status}
+          loading={loading}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
         />
       </AnimatedSection>
     </>
